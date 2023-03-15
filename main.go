@@ -97,6 +97,8 @@ func main() {
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 
+	// demoUrl is a URL to a demo server that we will proxy requests to
+
 	demoUrl, err := url.Parse("http://127.0.0.1:55000/")
 	if err != nil {
 		log.Fatal().Err(err).Msg("Failed to parse demo url")
